@@ -1,4 +1,5 @@
 "use client";
+RegisterPage.displayName = "RegisterPage";
 import { useState, useCallback, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -108,6 +109,7 @@ const StepComponent = memo(({ stepIndex, formData, handleChange, errors }: { ste
         </motion.div>
     );
 });
+StepComponent.displayName = "StepComponent";
 
 export default function RegisterPage() {
     const [currentStep, setCurrentStep] = useState<number>(0);
