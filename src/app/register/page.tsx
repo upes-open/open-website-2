@@ -87,7 +87,7 @@ const StepComponent = memo(({ stepIndex, formData, handleChange, errors }: { ste
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 + idx * 0.1, duration: 0.4 }}
-                    className="relative"
+                    className="m-4"
                 >
                     <label
                         htmlFor={field.name}
@@ -219,14 +219,7 @@ export default function RegisterPage() {
 								</motion.div>
 							))}
 						</div>
-						<div className="absolute top-1/2 left-0 w-full h-0.5 bg-border -z-10">
-							<motion.div
-								className="h-full bg-primary"
-								initial={{ scaleX: 0 }}
-								animate={{ scaleX: `${currentStep / (steps.length - 1)}`, transformOrigin: "left" }}
-								transition={{ duration: 0.5 }}
-							/>
-						</div>
+						
 					</motion.div>                 
                     <motion.form
                         onSubmit={(e) => e.preventDefault()}
