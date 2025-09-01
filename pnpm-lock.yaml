@@ -64,6 +64,9 @@ devDependencies:
   typescript-eslint:
     specifier: ^8.41.0
     version: 8.41.0(eslint@9.34.0)(typescript@5.9.2)
+  wrangler:
+    specifier: ^4.33.1
+    version: 4.33.1
 
 packages:
   /@alloc/quick-lru@5.2.0:

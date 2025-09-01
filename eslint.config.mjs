@@ -13,7 +13,7 @@ const compat = new FlatCompat({ baseDirectory: __dirname });
 
 export default tseslint.config(
   {
-    ignores: [".next", "dist", "node_modules", "out", "build", "next-env.d.ts"],
+    ignores: [".next", ".vercel", ".wrangler", "node_modules", "next-env.d.ts"],
   },
   js.configs.recommended,
   ...tseslint.configs.strict,

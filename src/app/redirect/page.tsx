@@ -19,7 +19,7 @@ export default function RedirectPage() {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [router]);
 
   return (
     <div className='flex items-center justify-center h-screen bg-black'>
