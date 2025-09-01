@@ -1,29 +1,8 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 
-const REDIRECT_URL = 'https://google.com';
-
-export default function RedirectPage() {
-  const [counter, setCounter] = useState(3);
-  const router = useRouter();
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCounter((prev) => prev - 1);
-    }, 1000);
-
-    setTimeout(() => {
-      router.push(REDIRECT_URL);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [router]);
-
+export default function ComingSoon() {
   return (
     <div className='flex flex-col items-center justify-center h-screen'>
       <div className='flex items-center -ml-8'>
@@ -39,9 +18,7 @@ export default function RedirectPage() {
           OPEN COMMUNITY
         </h1>
       </div>
-      <h3 className='text-base font-medium'>
-        Redirecting to {REDIRECT_URL} in {counter}...
-      </h3>
+      <h3 className='text-base font-medium'>We are coming soon...</h3>
       <div className='mt-8'>
         <Link href='/'>
           <Button variant='default'>Go to Home</Button>
