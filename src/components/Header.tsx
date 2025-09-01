@@ -13,7 +13,7 @@ export default function Header() {
             height={50}
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
           />
-          <p className='text-lg font-extrabold'>OPEN COMMUNITY</p>
+          <p className='text-lg font-bold'>OPEN COMMUNITY</p>
         </div>
         <ThemeToggle />
       </div>
