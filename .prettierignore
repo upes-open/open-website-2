@@ -1,0 +1,46 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+backup-files/
+
+# Terraform local state files
+terraform.tfstate
+terraform.tfstate.*
+
+# Crash logs
+crash.log
+
+# Ignore .terraform directory
+.terraform/
+
+# Ignore Terraform lock file if you don’t want to commit it (optional)
+.terraform.lock.hcl
+
+# Provider binaries (optional – handled by .terraform/ already)
+*.tfprovider
+terraform-provider-*
+
+# IDE and OS artifacts
+*.DS_Store
+*.swp
+
