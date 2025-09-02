@@ -1,5 +1,5 @@
 import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
-import images from './constants';
+import { images } from './constants';
 
 export function EventsAndProjects() {
   return (
