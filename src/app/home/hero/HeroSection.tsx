@@ -1,28 +1,26 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
+import Docker3D from '@/components/ui/models/Docker';
+import Figma3D from '@/components/ui/models/Figma';
+import Git3D from '@/components/ui/models/Git';
+import GithubLogo3D from '@/components/ui/models/GitHub';
+import Linux3D from '@/components/ui/models/Linux';
+import ReactLogo3D from '@/components/ui/models/React';
+import { useIsMobile } from '@/hooks/use-mobile';
 import clsx from 'clsx';
 import { motion } from 'motion/react';
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import React from 'react';
-import Linux3D from '@/components/ui/Linux';
-import Docker3D from '@/components/ui/Docker';
-import Figma3D from '@/components/ui/Figma';
-import Git3D from '@/components/ui/Git';
-import ReactLogo3D from '@/components/ui/ReactLogo';
-import { useIsMobile } from '@/hooks/use-mobile';
-import GithubLogo3D from '@/components/ui/GitHub';
-import {
-  FloatingImage,
-  FancyText,
-  containerVariants,
-  textVariants,
-} from './helpers';
+import { FloatingImage } from './FloatingImage';
+import { FancyText } from './FancyText';
+import useVariant from './useVariant';
 
 export default function HeroSection() {
   const isMobile = useIsMobile();
+  const { containerVariants, textVariants } = useVariant();
+
   return (
-    <section className='relative flex flex-col md:flex-row md:items-stretch w-full md:h-[90vh] overflow-hidden'>
+    <section className='relative flex flex-col md:flex-row md:items-stretch w-full md:h-[90vh] lg:min-h-screen overflow-hidden'>
       {/* Left icons */}
       <div
         className={clsx(
@@ -54,7 +52,7 @@ export default function HeroSection() {
           <motion.h1 variants={textVariants}>
             <FancyText
               text='Building the Future'
-              classname='text-foreground font-bold tracking-tight leading-tight text-4xl md:text-6xl lg:text-7xl
+              classname='text-foreground/90 font-bold tracking-tight leading-tight text-4xl md:text-6xl lg:text-7xl
 '
               highlightLetters={['u']}
             />
@@ -63,7 +61,7 @@ export default function HeroSection() {
           <motion.h2 variants={textVariants} className='mt-2'>
             <FancyText
               text='with Open Source'
-              classname='text-foreground font-bold leading-tight text-4xl md:text-6xl lg:text-7xl'
+              classname='text-foreground/90 font-bold leading-tight text-4xl md:text-6xl lg:text-7xl'
               highlightLetters={['p', 'e', 's']}
             />
           </motion.h2>
@@ -85,7 +83,7 @@ export default function HeroSection() {
             <motion.div variants={textVariants}>
               <Button
                 asChild
-                className='px-8 py-4 rounded-md bg-foreground text-background text-base sm:text-lg transform-gpu transition-all duration-300 ease-out hover:bg-foreground/90 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 active:translate-y-0'
+                className='px-8 py-4 rounded-md bg-primary/70 text-foreground sm:text-lg transition-all duration-100 ease-in-out hover:bg-primary/50 hover:scale-105'
               >
                 <Link href='/about'>Join Community</Link>
               </Button>
@@ -94,7 +92,7 @@ export default function HeroSection() {
               <Button
                 asChild
                 variant='outline'
-                className='px-8 py-4 rounded-md border-border bg-background text-foreground sm:text-lg transform-gpu transition-all duration-300 ease-out hover:bg-background/90 hover:border-border hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:translate-y-0'
+                className='px-8 py-4 rounded-md border-border sm:text-lg transition-all duration-100 ease-in-out hover:scale-105 '
               >
                 <Link href='/projects'>View Projects</Link>
               </Button>

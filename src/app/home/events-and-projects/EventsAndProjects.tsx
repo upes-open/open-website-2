@@ -1,4 +1,5 @@
 import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
+import images from './constants';
 
 export function EventsAndProjects() {
   return (
@@ -14,12 +15,3 @@ export function EventsAndProjects() {
     </div>
   );
 }
-
-// temporary will be removed in the future
-const images = [
-  { src: '/images/placeholder.png', alt: 'Gallery image 1' },
-  { src: '/images/placeholder.png', alt: 'Gallery image 2' },
-  { src: '/images/placeholder.png', alt: 'Gallery image 2' },
-  { src: '/images/placeholder.png', alt: 'Gallery image 2' },
-  { src: '/images/placeholder.png', alt: 'Gallery image 2' },
-];

@@ -1,9 +1,6 @@
-import ComingSoon from '@/components/comingsoon';
+import ComingSoon from '@/components/ComingSoon';
 
-// add this only for server rendered pages
-export const runtime = 'edge';
-
-export default function Home() {
+export default function Page() {
   return (
     <div>
       {/* Remove this once you have added your content */}

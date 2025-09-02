@@ -8,9 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "typegen": "next typegen",
-    "pages:build": "npx @cloudflare/next-on-pages",
-    "preview": "npm run pages:build && wrangler pages dev",
-    "deploy": "npm run pages:build && wrangler pages deploy",
+    "tscheck": "tsc --noEmit",
+    "preview": "next preview",
     "prepare": "husky"
   },
   "dependencies": {
@@ -30,7 +29,6 @@
     "three-stdlib": "^2.36.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.15",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
@@ -47,9 +45,7 @@
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.7",
     "typescript": "^5",
-    "typescript-eslint": "^8.41.0",
-    "vercel": "^46.1.1",
-    "wrangler": "^4.33.1"
+    "typescript-eslint": "^8.41.0"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
