@@ -88,6 +88,9 @@ devDependencies:
   typescript-eslint:
     specifier: ^8.41.0
     version: 8.41.0(eslint@9.34.0)(typescript@5.9.2)
+  vercel:
+    specifier: ^46.1.1
+    version: 46.1.1
   wrangler:
     specifier: ^4.33.1
     version: 4.33.1
