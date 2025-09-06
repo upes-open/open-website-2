@@ -16,9 +16,18 @@ export type ImageItem = {
   alt: string;
 };
 
+export type ProjectItem = {
+  src: string;
+  alt: string;
+  githubLink: string;
+  projectName: string;
+  shortDescription: string;
+};
+
 export const InfiniteMovingCards = ({
   items,
   images,
+  projects,
   direction,
   speed,
   pauseOnHover = true,
@@ -26,6 +35,7 @@ export const InfiniteMovingCards = ({
 }: {
   items?: TestimonialItem[];
   images?: ImageItem[];
+  projects?: ProjectItem[];
   direction?: 'left' | 'right';
   speed?: 'fast' | 'normal' | 'slow';
   pauseOnHover?: boolean;
@@ -41,12 +51,14 @@ export const InfiniteMovingCards = ({
   const [start, setStart] = useState(false);
 
   // Validate that either items or images is provided, but not both
-  if (!items && !images) {
-    throw new Error("Either 'items' or 'images' prop must be provided");
-  }
-  if (items && images) {
+  if (!items && !images && !projects) {
     throw new Error(
-      "Cannot provide both 'items' and 'images' props. Choose one.",
+      "Either 'items' or 'images' or 'projects' prop must be provided",
+    );
+  }
+  if ((items && images) || (items && projects) || (images && projects)) {
+    throw new Error(
+      "Cannot provide multiple 'items' or 'images' or  'projects' Choose one.",
     );
   }
 
@@ -146,11 +158,33 @@ export const InfiniteMovingCards = ({
     </li>
   );
 
+  const renderProjectCard = (project: ProjectItem, index: number) => (
+    <li
+      className='relative w-[300px] max-w-full shrink-0 rounded-2xl border border-b-0 border-zinc-200 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] md:w-[350px] dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)]'
+      key={`${project.src}-${index}`}
+    >
+      <Image
+        src={project.src}
+        alt={project.alt}
+        width={300}
+        height={200}
+        className='object-cover w-[100%] h-[100%] rounded-2xl'
+      />
+
+      <div className='mt-4 absolute z-1 bottom-0 left-0 p-5'>
+        <h1 className='text-2xl font-semibold text-start'>
+          {project.projectName}
+        </h1>
+        <p className='text-sm text-start'>{project.shortDescription}</p>
+      </div>
+    </li>
+  );
+
   return (
     <div
       ref={containerRef}
       className={cn(
-        'scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
+        'scroller relative z-20 max-w-7xle ovrflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
         className,
       )}
     >
@@ -165,6 +199,8 @@ export const InfiniteMovingCards = ({
         {items &&
           items.map((item, index) => renderTestimonialCard(item, index))}
         {images && images.map((image, index) => renderImageCard(image, index))}
+        {projects &&
+          projects.map((project, index) => renderProjectCard(project, index))}
       </ul>
     </div>
   );
