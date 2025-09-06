@@ -1,10 +1,11 @@
-import ComingSoon from '@/components/ComingSoon';
+import OsocProjects from './project_section/osoc_project/osocProjects';
+import OtherProjects from './project_section/other_project/otherProjects';
 
 export default function Page() {
   return (
     <div>
-      {/* Remove this once you have added your content */}
-      <ComingSoon />
+      <OsocProjects />
+      <OtherProjects />
     </div>
   );
 }
