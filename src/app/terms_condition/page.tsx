@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft } from "lucide-react";
+import { MdArrowLeft } from "react-icons/md";
 
 const Page = () => {
   return (
@@ -13,7 +13,7 @@ const Page = () => {
           {/* Header */}
           <div className="text-center mb-12">
               <Button variant="ghost" className="mb-6">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+                <MdArrowLeft className="mr-2 h-4 w-4" />
                 Back to Home
               </Button>
             <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
