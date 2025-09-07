@@ -1,8 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Package, Truck, MapPin, Clock, CheckCircle, ArrowLeft } from 'lucide-react';
-
+import { FiPackage, FiTruck, FiMapPin, FiClock, FiCheckCircle, FiArrowLeft } from 'react-icons/fi';
 const page = () => {
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-background via-background/90 to-primary/5">
@@ -10,10 +9,10 @@ const page = () => {
       <div className="relative z-10 container mx-auto px-4 py-12">
         {/* Header */}
         <div className="text-center mb-12">
-            <ArrowLeft size={20} />
+            <FiArrowLeft size={20} />
             Back to Plans
           <div className="flex items-center justify-center gap-3 mb-4">
-            <CheckCircle className="text-green-500" size={32} />
+            <FiCheckCircle className="text-green-500" size={32} />
             <h1 className="text-4xl font-bold  bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Subscription Confirmed
             </h1>
@@ -28,7 +27,7 @@ const page = () => {
           <Card className="bg-card/50 backdrop-blur-sm border-border/50">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Package className="text-primary" size={24} />
+                <FiPackage className="text-primary" size={24} />
                 Subscription Summary
               </CardTitle>
             </CardHeader>
@@ -58,13 +57,13 @@ const page = () => {
           <Card className="bg-card/50 backdrop-blur-sm border-border/50">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Truck className="text-primary" size={24} />
+                <FiTruck className="text-primary" size={24} />
                 Billing Details
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin className="text-muted-foreground mt-1" size={20} />
+                <FiMapPin className="text-muted-foreground mt-1" size={20} />
                 <div>
                   <p className="font-medium">Billing Address</p>
                   <p className="text-sm text-muted-foreground">
@@ -75,7 +74,7 @@ const page = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Clock className="text-muted-foreground mt-1" size={20} />
+                <FiClock className="text-muted-foreground mt-1" size={20} />
                 <div>
                   <p className="font-medium">Subscription Period</p>
                   <p className="text-sm text-muted-foreground">
@@ -100,7 +99,7 @@ const page = () => {
                   {/* Step 1 - Completed */}
                   <div className="relative flex items-center gap-4 pb-6">
                     <div className="relative z-10 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                      <CheckCircle size={16} className="text-white" />
+                      <FiCheckCircle size={16} className="text-white" />
                     </div>
                     <div>
                       <p className="font-medium">Subscription Confirmed</p>
@@ -112,7 +111,7 @@ const page = () => {
                   {/* Step 2 - Current */}
                   <div className="relative flex items-center gap-4 pb-6">
                     <div className="relative z-10 w-8 h-8 bg-primary rounded-full flex items-center justify-center animate-pulse">
-                      <Package size={16} className="text-white" />
+                      <FiPackage size={16} className="text-white" />
                     </div>
                     <div>
                       <p className="font-medium">Activating</p>
@@ -124,7 +123,7 @@ const page = () => {
                   {/* Step 3 - Pending */}
                   <div className="relative flex items-center gap-4 pb-6">
                     <div className="relative z-10 w-8 h-8 bg-muted rounded-full flex items-center justify-center">
-                      <Truck size={16} className="text-muted-foreground" />
+                      <FiTruck size={16} className="text-muted-foreground" />
                     </div>
                     <div>
                       <p className="font-medium text-muted-foreground">Access Granted</p>
@@ -135,7 +134,7 @@ const page = () => {
                   {/* Step 4 - Pending */}
                   <div className="relative flex items-center gap-4">
                     <div className="relative z-10 w-8 h-8 bg-muted rounded-full flex items-center justify-center">
-                      <CheckCircle size={16} className="text-muted-foreground" />
+                      <FiCheckCircle size={16} className="text-muted-foreground" />
                     </div>
                     <div>
                       <p className="font-medium text-muted-foreground">Welcome Email Sent</p>
