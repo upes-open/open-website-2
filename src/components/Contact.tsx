@@ -5,8 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { toast } from "sonner";
+import { MdEmail, MdPhone, MdLocationOn, MdSend } from "react-icons/md";import { toast } from "sonner";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -100,7 +99,7 @@ const ContactForm = () => {
               type="submit" 
               className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary-glow hover:to-accent text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <Send className="w-4 h-4 mr-2" />
+              <MdSend className="w-4 h-4 mr-2" />
               Send Message
             </Button>
           </form>
@@ -118,7 +117,7 @@ const ContactForm = () => {
           <CardContent className="space-y-6">
             <div className="flex items-center space-x-4">
               <div className="p-3 bg-primary/20 rounded-lg">
-                <Mail className="w-5 h-5 text-primary" />
+                <MdEmail className="w-5 h-5 text-primary" />
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">Email</h3>
@@ -128,7 +127,7 @@ const ContactForm = () => {
             
             <div className="flex items-center space-x-4">
               <div className="p-3 bg-primary/20 rounded-lg">
-                <Phone className="w-5 h-5 text-primary" />
+                <MdPhone className="w-5 h-5 text-primary" />
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">Phone</h3>
@@ -138,7 +137,7 @@ const ContactForm = () => {
             
             <div className="flex items-center space-x-4">
               <div className="p-3 bg-primary/20 rounded-lg">
-                <MapPin className="w-5 h-5 text-primary" />
+                <MdLocationOn className="w-5 h-5 text-primary" />
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">Address</h3>

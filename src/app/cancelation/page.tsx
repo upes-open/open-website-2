@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, RefreshCw, CreditCard, Calendar, AlertTriangle } from "lucide-react";
+import { MdArrowLeft, MdRefresh, MdCreditCard, MdCalendarToday, MdWarning } from "react-icons/md";
 
 const page = () => {
   return (
@@ -10,7 +10,7 @@ const page = () => {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
             <Button variant="outline" className="flex items-center gap-2">
-              <ArrowLeft className="w-4 h-4" />
+              <MdArrowLeft className="w-4 h-4" />
               Back to Home
             </Button>
         </div>
@@ -31,7 +31,7 @@ const page = () => {
               {/* Subscription Cancellation */}
               <section className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <RefreshCw className="w-5 h-5 text-primary" />
+                  <MdRefresh className="w-5 h-5 text-primary" />
                   <h2 className="text-2xl font-semibold">Subscription Cancellation</h2>
                 </div>
                 <div className="space-y-3 text-muted-foreground">
@@ -51,7 +51,7 @@ const page = () => {
               {/* Refund Policy */}
               <section className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <CreditCard className="w-5 h-5 text-primary" />
+                  <MdCreditCard className="w-5 h-5 text-primary" />
                   <h2 className="text-2xl font-semibold">Refund Policy</h2>
                 </div>
                 <div className="space-y-3 text-muted-foreground">
@@ -78,7 +78,7 @@ const page = () => {
               {/* How to Cancel */}
               <section className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-primary" />
+                  <MdCalendarToday className="w-5 h-5 text-primary" />
                   <h2 className="text-2xl font-semibold">How to Cancel Your Subscription</h2>
                 </div>
                 <div className="space-y-3 text-muted-foreground">
@@ -98,7 +98,7 @@ const page = () => {
               {/* Processing Times */}
               <section className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <AlertTriangle className="w-5 h-5 text-primary" />
+                  <MdWarning className="w-5 h-5 text-primary" />
                   <h2 className="text-2xl font-semibold">Processing Times</h2>
                 </div>
                 <div className="space-y-3 text-muted-foreground">
