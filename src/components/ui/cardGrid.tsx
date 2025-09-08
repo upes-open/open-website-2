@@ -30,7 +30,7 @@ export const DisplayCardGrid = ({
     <div
       ref={containerRef}
       className={cn(
-        'scroller relative z-20 max-w-7xle ovrflow-hidden',
+        'scroller relative z-20 max-w-7xl overflow-hidden',
         className,
       )}
     >
@@ -44,19 +44,23 @@ export const DisplayCardGrid = ({
         {cards.map((card, index) => (
           <li
             key={`${card.src}-${index}`}
-            className='relative rounded-2xl w-100 h-95 border border-zinc-200 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)] overflow-hidden'
+            className='relative rounded-2xl border border-border bg-background overflow-hidden p-4'
           >
             <Image
               src={card.src}
               alt={card.alt}
               width={300}
               height={200}
-              className='w-full h-[70%] object-cover'
+              className='w-full h-[200px] object-cover rounded-lg'
             />
 
-            <div className='absolute bottom-0 left-0 p-3'>
-              <h1 className='text-2xl mb-1 font-semibold'>{card.name}</h1>
-              <p className='text-sm'>{card.shortDescription}</p>
+            <div className='mt-4'>
+              <h1 className='text-lg font-semibold text-foreground'>
+                {card.name}
+              </h1>
+              <p className='text-sm text-muted-foreground'>
+                {card.shortDescription}
+              </p>
             </div>
           </li>
         ))}

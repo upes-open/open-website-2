@@ -160,7 +160,8 @@ export const InfiniteMovingCards = ({
 
   const renderProjectCard = (project: ProjectItem, index: number) => (
     <li
-      className='relative w-[300px] max-w-full shrink-0 rounded-2xl border border-b-0 border-zinc-200 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] md:w-[350px] dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)]'
+      className='relative w-[300px] max-w-full shrink-0 rounded-2xl border border-zinc-200 
+               bg-white md:w-[350px] dark:border-zinc-700 dark:bg-zinc-900 p-4'
       key={`${project.src}-${index}`}
     >
       <Image
@@ -168,14 +169,16 @@ export const InfiniteMovingCards = ({
         alt={project.alt}
         width={300}
         height={200}
-        className='object-cover w-[100%] h-[100%] rounded-2xl'
+        className='object-cover w-full h-[200px] rounded-lg'
       />
 
-      <div className='mt-4 absolute z-1 bottom-0 left-0 p-5'>
-        <h1 className='text-2xl font-semibold text-start'>
+      <div className='mt-4'>
+        <h1 className='text-lg font-semibold text-neutral-800 dark:text-gray-100'>
           {project.projectName}
         </h1>
-        <p className='text-sm text-start'>{project.shortDescription}</p>
+        <p className='text-sm text-neutral-600 dark:text-gray-400'>
+          {project.shortDescription}
+        </p>
       </div>
     </li>
   );
