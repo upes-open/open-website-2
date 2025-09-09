@@ -19,23 +19,18 @@ export const DisplayCardGrid = ({
   cards?: CardItem[];
   className?: string;
 }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const scrollerRef = React.useRef<HTMLUListElement>(null);
-
   if (!cards) {
     throw new Error('cards are not provided');
   }
 
   return (
     <div
-      ref={containerRef}
       className={cn(
         'scroller relative z-20 max-w-7xl overflow-hidden',
         className,
       )}
     >
       <ul
-        ref={scrollerRef}
         className={cn(
           'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-7',
           className,
