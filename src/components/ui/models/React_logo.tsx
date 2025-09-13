@@ -67,7 +67,7 @@ export default function ReactLogo3D() {
       <Canvas
         className='w-full h-full'
         dpr={[1, 2]}
-        camera={{ position: [0, 1, 4.2], fov: 50 }}
+        camera={{ position: [-3, 1, 4.2], fov: 50 }}
       >
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 5, 5]} intensity={0.5} />

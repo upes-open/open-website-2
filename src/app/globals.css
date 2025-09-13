@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -37,6 +37,13 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-shape-primary: var(--shape-primary);
+  --color-shape-secondary: var(--shape-secondary);
+  --color-shape-accent: var(--shape-accent);
+  --color-shape-highlight: var(--shape-highlight);
+  --color-shape-subtle: var(--shape-subtle);
+  --color-shape-border: var(--shape-border);
+  --color-shape-glow: var(--shape-glow);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -76,6 +83,15 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Geometric shape colors for light theme */
+  --shape-primary: oklch(0.7083 0.235977 141.5726 / 0.12);
+  --shape-secondary: oklch(0.646 0.222 41.116 / 0.12);
+  --shape-accent: oklch(0.6 0.118 184.704 / 0.12);
+  --shape-highlight: oklch(0.828 0.189 84.429 / 0.12);
+  --shape-subtle: oklch(0.769 0.188 70.08 / 0.12);
+  --shape-border: oklch(0.145 0 0 / 0.15);
+  --shape-glow: oklch(0.145 0 0 / 0.08);
 }
 
 .dark {
@@ -110,6 +126,27 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* Geometric shape colors for dark theme */
+  --shape-primary: oklch(0.7083 0.235977 141.5726 / 0.08);
+  --shape-secondary: oklch(0.488 0.243 264.376 / 0.08);
+  --shape-accent: oklch(0.696 0.17 162.48 / 0.08);
+  --shape-highlight: oklch(0.627 0.265 303.9 / 0.08);
+  --shape-subtle: oklch(0.645 0.246 16.439 / 0.08);
+  --shape-border: oklch(0.985 0 0 / 0.12);
+  --shape-glow: oklch(0.985 0 0 / 0.05);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.7083 0.235977 141.5726);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
 }
 
 @layer base {
@@ -122,8 +159,9 @@
 }
 
 @theme inline {
-  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
- 
+  --animate-scroll: scroll var(--animation-duration, 40s)
+    var(--animation-direction, forwards) linear infinite;
+
   @keyframes scroll {
     to {
       transform: translate(calc(-50% - 0.5rem));
