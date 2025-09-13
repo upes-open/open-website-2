@@ -1,18 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MdArrowLeft, MdRefresh, MdCreditCard, MdCalendarToday, MdWarning } from "react-icons/md";
+import {
+  REFUND_LAST_UPDATED,
+  SUBSCRIPTION_CANCELLATION,
+  REFUND_POLICY,
+  HOW_TO_CANCEL,
+  PROCESSING_TIMES,
+  SPECIAL_CIRCUMSTANCES,
+  NON_REFUNDABLE_ITEMS,
+  CONTACT_INFO,
+} from "@/components/constants";
 
-const page = () => {
+export default function Page() {
   return (
     <main className="min-h-screen relative overflow-hidden">
-]      
       <div className="relative z-10 container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
-            <Button variant="outline" className="flex items-center gap-2">
-              <MdArrowLeft className="w-4 h-4" />
-              Back to Home
-            </Button>
+          <Button variant="outline" className="flex items-center gap-2">
+            <MdArrowLeft className="w-4 h-4" />
+            Back to Home
+          </Button>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-8">
@@ -20,172 +29,114 @@ const page = () => {
             <h1 className="text-4xl font-bold bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
               Cancellation & Refunds
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Last updated: {new Date().toLocaleDateString()}
-            </p>
+            <p className="text-lg text-muted-foreground">Last updated: {REFUND_LAST_UPDATED}</p>
           </div>
 
           <Card className="backdrop-blur-sm bg-background/95 border-primary/20">
             <CardContent className="p-8 space-y-8">
-              
               {/* Subscription Cancellation */}
-              <section className="space-y-4">
+              <section>
                 <div className="flex items-center gap-2">
                   <MdRefresh className="w-5 h-5 text-primary" />
-                  <h2 className="text-2xl font-semibold">Subscription Cancellation</h2>
+                  <h2 className="text-2xl font-semibold">{SUBSCRIPTION_CANCELLATION.title}</h2>
                 </div>
-                <div className="space-y-3 text-muted-foreground">
-                  <p>
-                    You may cancel your subscription at any time through your account dashboard or customer portal. 
-                    Upon cancellation:
-                  </p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Your subscription will remain active until the end of your current billing period</li>
-                    <li>You will continue to have access to all premium features until the subscription expires</li>
-                    <li>No additional charges will be made after cancellation</li>
-                    <li>You will receive a confirmation email within 24 hours</li>
-                  </ul>
-                </div>
+                <ul className="list-disc list-inside space-y-2 ml-4 text-muted-foreground">
+                  {SUBSCRIPTION_CANCELLATION.points.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
               </section>
 
               {/* Refund Policy */}
-              <section className="space-y-4">
+              <section>
                 <div className="flex items-center gap-2">
                   <MdCreditCard className="w-5 h-5 text-primary" />
-                  <h2 className="text-2xl font-semibold">Refund Policy</h2>
+                  <h2 className="text-2xl font-semibold">{REFUND_POLICY.title}</h2>
                 </div>
-                <div className="space-y-3 text-muted-foreground">
-                  <p>
-                    We offer the following refund options to ensure your satisfaction:
-                  </p>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div className="p-4 border border-primary/20 rounded-lg">
-                      <h3 className="font-semibold text-foreground mb-2">7-Day Money Back Guarantee</h3>
-                      <p className="text-sm">
-                        Full refund available within 7 days of your initial subscription for first-time subscribers.
-                      </p>
+                <div className="grid gap-4 md:grid-cols-2 mt-3">
+                  {REFUND_POLICY.options.map((opt, i) => (
+                    <div key={i} className="p-4 border border-primary/20 rounded-lg">
+                      <h3 className="font-semibold text-foreground mb-2">{opt.heading}</h3>
+                      <p className="text-sm">{opt.text}</p>
                     </div>
-                    <div className="p-4 border border-primary/20 rounded-lg">
-                      <h3 className="font-semibold text-foreground mb-2">Pro-rated Refunds</h3>
-                      <p className="text-sm">
-                        Unused portions of annual subscriptions may be refunded at our discretion.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </section>
 
               {/* How to Cancel */}
-              <section className="space-y-4">
+              <section>
                 <div className="flex items-center gap-2">
                   <MdCalendarToday className="w-5 h-5 text-primary" />
-                  <h2 className="text-2xl font-semibold">How to Cancel Your Subscription</h2>
+                  <h2 className="text-2xl font-semibold">{HOW_TO_CANCEL.title}</h2>
                 </div>
-                <div className="space-y-3 text-muted-foreground">
-                  <ol className="list-decimal list-inside space-y-2 ml-4">
-                    <li>Log into your account dashboard</li>
-                    <li>Navigate to &quot;Subscription Settings&quot; or &quot;Billing&quot;</li>
-                    <li>Click &quot;Manage Subscription&quot; to access the customer portal</li>
-                    <li>Select &quot;Cancel Subscription&quot; and follow the prompts</li>
-                    <li>Confirm your cancellation via the confirmation email</li>
-                  </ol>
-                  <p className="font-medium text-foreground mt-4">
-                    Alternative: Contact our support team at support@example.com for assistance with cancellation.
-                  </p>
-                </div>
+                <ol className="list-decimal list-inside space-y-2 ml-4 text-muted-foreground">
+                  {HOW_TO_CANCEL.steps.map((step, i) => (
+                    <li key={i}>{step}</li>
+                  ))}
+                </ol>
+                <p className="font-medium text-foreground mt-4">{HOW_TO_CANCEL.alt}</p>
               </section>
 
               {/* Processing Times */}
-              <section className="space-y-4">
+              <section>
                 <div className="flex items-center gap-2">
                   <MdWarning className="w-5 h-5 text-primary" />
-                  <h2 className="text-2xl font-semibold">Processing Times</h2>
+                  <h2 className="text-2xl font-semibold">{PROCESSING_TIMES.title}</h2>
                 </div>
-                <div className="space-y-3 text-muted-foreground">
-                  <div className="grid gap-4 md:grid-cols-3">
-                    <div className="text-center p-4 border border-primary/20 rounded-lg">
-                      <div className="text-2xl font-bold text-primary mb-2">Immediate</div>
-                      <div className="text-sm">Cancellation Processing</div>
+                <div className="grid gap-4 md:grid-cols-3 mt-3">
+                  {PROCESSING_TIMES.times.map((time, i) => (
+                    <div key={i} className="text-center p-4 border border-primary/20 rounded-lg">
+                      <div className="text-2xl font-bold text-primary mb-2">{time.label}</div>
+                      <div className="text-sm">{time.text}</div>
                     </div>
-                    <div className="text-center p-4 border border-primary/20 rounded-lg">
-                      <div className="text-2xl font-bold text-primary mb-2">3-5 Days</div>
-                      <div className="text-sm">Refund Processing</div>
-                    </div>
-                    <div className="text-center p-4 border border-primary/20 rounded-lg">
-                      <div className="text-2xl font-bold text-primary mb-2">5-10 Days</div>
-                      <div className="text-sm">Bank Processing</div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </section>
 
               {/* Special Circumstances */}
-              <section className="space-y-4">
-                <h2 className="text-2xl font-semibold">Special Circumstances</h2>
-                <div className="space-y-3 text-muted-foreground">
-                  <p>
-                    We may offer refunds outside our standard policy for:
-                  </p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Technical issues preventing service access for extended periods</li>
-                    <li>Billing errors or unauthorized charges</li>
-                    <li>Service downtime exceeding our SLA commitments</li>
-                    <li>Duplicate subscriptions or payments</li>
-                  </ul>
-                  <p className="font-medium text-foreground mt-4">
-                    Each case will be reviewed individually by our support team.
-                  </p>
-                </div>
+              <section>
+                <h2 className="text-2xl font-semibold">{SPECIAL_CIRCUMSTANCES.title}</h2>
+                <ul className="list-disc list-inside space-y-2 ml-4 text-muted-foreground">
+                  {SPECIAL_CIRCUMSTANCES.points.map((p, i) => (
+                    <li key={i}>{p}</li>
+                  ))}
+                </ul>
               </section>
 
               {/* Non-Refundable Items */}
-              <section className="space-y-4">
-                <h2 className="text-2xl font-semibold">Non-Refundable Items</h2>
-                <div className="space-y-3 text-muted-foreground">
-                  <p>
-                    The following are generally not eligible for refunds:
-                  </p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Partially used monthly subscriptions (beyond 7-day guarantee)</li>
-                    <li>Add-on services or one-time purchases</li>
-                    <li>Subscription fees for months already accessed and used</li>
-                    <li>Cancellations due to violation of terms of service</li>
-                  </ul>
-                </div>
+              <section>
+                <h2 className="text-2xl font-semibold">{NON_REFUNDABLE_ITEMS.title}</h2>
+                <ul className="list-disc list-inside space-y-2 ml-4 text-muted-foreground">
+                  {NON_REFUNDABLE_ITEMS.points.map((p, i) => (
+                    <li key={i}>{p}</li>
+                  ))}
+                </ul>
               </section>
 
-              {/* Contact Information */}
-              <section className="space-y-4">
-                <h2 className="text-2xl font-semibold">Need Help?</h2>
-                <div className="space-y-3 text-muted-foreground">
-                  <p>
-                    If you have questions about cancellation or refunds, please contact us:
-                  </p>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div>
-                      <p><strong>Email:</strong> support@example.com</p>
-                      <p><strong>Phone:</strong> 1-800-SUPPORT</p>
-                    </div>
-                    <div>
-                      <p><strong>Business Hours:</strong> Monday - Friday, 9 AM - 6 PM EST</p>
-                      <p><strong>Response Time:</strong> Within 24 hours</p>
-                    </div>
+              {/* Contact Info */}
+              <section>
+                <h2 className="text-2xl font-semibold">{CONTACT_INFO.title}</h2>
+                <div className="grid gap-4 md:grid-cols-2 mt-3 text-muted-foreground">
+                  <div>
+                    <p><strong>Email:</strong> {CONTACT_INFO.email}</p>
+                    <p><strong>Phone:</strong> {CONTACT_INFO.phone}</p>
+                  </div>
+                  <div>
+                    <p><strong>Business Hours:</strong> {CONTACT_INFO.hours}</p>
+                    <p><strong>Response Time:</strong> {CONTACT_INFO.response}</p>
                   </div>
                 </div>
               </section>
-
             </CardContent>
           </Card>
 
           <div className="text-center">
-              <Button className="bg-gradient-to-r from-primary to-accent hover:from-primary-glow hover:to-accent/80">
-                Return to Homepage
-              </Button>
+            <Button className="bg-gradient-to-r from-primary to-accent hover:from-primary-glow hover:to-accent/80">
+              Return to Homepage
+            </Button>
           </div>
         </div>
       </div>
     </main>
   );
-};
-
-export default page;
+}
