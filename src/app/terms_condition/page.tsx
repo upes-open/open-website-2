@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MdArrowLeft } from "react-icons/md";
-import { TERMS_AND_CONDITIONS } from "@/components/constants";
+import { TERMS_AND_CONDITIONS } from "./constants";
 
 const Page = () => {
   return (

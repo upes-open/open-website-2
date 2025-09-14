@@ -6,7 +6,7 @@ import {
   FiClock, FiCheckCircle, FiArrowLeft 
 } from 'react-icons/fi';
 
-import { SUBSCRIPTION_DETAILS, ACTIVATION_STEPS } from '@/components/constants';
+import { SUBSCRIPTION_DETAILS, ACTIVATION_STEPS } from './constants';
 
 export default function Page() {
   return (

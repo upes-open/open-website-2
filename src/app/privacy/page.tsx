@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MdArrowLeft } from "react-icons/md";
-import { PRIVACY_POLICY } from "@/components/constants";
+import { PRIVACY_POLICY } from "./constants";
 
 export default function Page() {
   return (

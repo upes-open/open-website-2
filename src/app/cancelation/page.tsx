@@ -10,7 +10,7 @@ import {
   SPECIAL_CIRCUMSTANCES,
   NON_REFUNDABLE_ITEMS,
   CONTACT_INFO,
-} from "@/components/constants";
+} from "./constants";
 
 export default function Page() {
   return (
