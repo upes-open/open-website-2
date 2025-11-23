@@ -5,11 +5,10 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-
-const REDIRECT_URL = 'https://google.com';
+import { REDIRECT_CONFIG } from './constants';
 
 export default function RedirectPage() {
-  const [counter, setCounter] = useState(3);
+  const [counter, setCounter] = useState(REDIRECT_CONFIG.countdown);
   const router = useRouter();
 
   useEffect(() => {
@@ -18,8 +17,8 @@ export default function RedirectPage() {
     }, 1000);
 
     setTimeout(() => {
-      router.push(REDIRECT_URL);
-    }, 3000);
+      window.location.href = REDIRECT_CONFIG.url;
+    }, REDIRECT_CONFIG.countdown * 1000);
 
     return () => clearInterval(interval);
   }, [router]);
@@ -36,11 +35,11 @@ export default function RedirectPage() {
           className='mr-2'
         />
         <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold'>
-          OPEN COMMUNITY
+          {REDIRECT_CONFIG.companyName}
         </h1>
       </div>
       <h3 className='text-base font-medium'>
-        Redirecting to {REDIRECT_URL} in {counter}...
+        Redirecting to {REDIRECT_CONFIG.url} in {counter}...
       </h3>
       <div className='mt-8'>
         <Link href='/'>
