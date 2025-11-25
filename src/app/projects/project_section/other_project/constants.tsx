@@ -10,10 +10,10 @@ export const cards: CardItem[] = [
   {
     src: '/images/placeholder.png',
     alt: 'Gallery image 1',
-    githubLink: 'https://github.com/upes-open',
-    name: 'Project 1',
+    githubLink: 'https://github.com/upes-open/OSoC-Swayam-Bazaar',
+    name: 'OSoC-Swayam-Bazaar',
     shortDescription:
-      'lorem ipsum dolor sit amet lorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit amets',
+      'This Web Application connects with local shops for personalized shopping. Help you buy goods from your favorite stores. Shopkeepers add their products, building a complete database',
   },
   {
     src: '/images/placeholder.png',

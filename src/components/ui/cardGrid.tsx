@@ -3,6 +3,7 @@
 import { cn } from '@/lib/utils';
 import React from 'react';
 import Image from 'next/image';
+import getGithubOgImage from '@/app/projects/project_section/osoc_project/getOGimage';
 
 export type CardItem = {
   src: string;
@@ -42,7 +43,7 @@ export const DisplayCardGrid = ({
             className='relative rounded-2xl border border-border bg-background overflow-hidden p-4'
           >
             <Image
-              src={card.src}
+              src={getGithubOgImage(card.githubLink)}
               alt={card.alt}
               width={300}
               height={200}

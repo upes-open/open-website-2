@@ -3,6 +3,10 @@
 import { cn } from '@/lib/utils';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import getGithubOgImage from '@/app/projects/project_section/osoc_project/getOGimage';
+import { ImGithub } from 'react-icons/im';
+import Link from 'next/link';
+import { UrlObject } from 'url';
 
 export type TestimonialItem = {
   testimonial: string;
@@ -14,12 +18,13 @@ export type TestimonialItem = {
 export type ImageItem = {
   src: string;
   alt: string;
+  githubLink: string;
 };
 
 export type ProjectItem = {
   src: string;
   alt: string;
-  githubLink: string;
+  githubLink: UrlObject;
   projectName: string;
   shortDescription: string;
 };
@@ -149,7 +154,7 @@ export const InfiniteMovingCards = ({
       key={`${image.src}-${index}`}
     >
       <Image
-        src={image.src}
+        src={getGithubOgImage(image.githubLink)}
         alt={image.alt}
         width={300}
         height={200}
@@ -160,12 +165,12 @@ export const InfiniteMovingCards = ({
 
   const renderProjectCard = (project: ProjectItem, index: number) => (
     <li
-      className='relative w-[300px] max-w-full shrink-0 rounded-2xl border border-zinc-200 
-               bg-white md:w-[350px] dark:border-zinc-700 dark:bg-zinc-900 p-4'
+      className='relative w-[400px] max-w-full shrink-0 rounded-2xl border border-zinc-200 
+               bg-white md:w-[400px] dark:border-zinc-700 dark:bg-zinc-900 p-4'
       key={`${project.src}-${index}`}
     >
       <Image
-        src={project.src}
+        src={getGithubOgImage(project.githubLink)}
         alt={project.alt}
         width={300}
         height={200}
@@ -173,9 +178,18 @@ export const InfiniteMovingCards = ({
       />
 
       <div className='mt-4'>
-        <h1 className='text-lg font-semibold text-neutral-800 dark:text-gray-100'>
-          {project.projectName}
-        </h1>
+        <div className='flex justify-center gap-2'>
+          <Link
+            href={project.githubLink as UrlObject}
+            target='_blank'
+            className='hover:opacity-70 transition-opacity'
+          >
+            <ImGithub className='h-5 w-5 text-neutral-800 dark:text-gray-100' />
+          </Link>
+          <h1 className='text-lg font-semibold text-neutral-800 dark:text-gray-100'>
+            {project.projectName}
+          </h1>
+        </div>
         <p className='text-sm text-neutral-600 dark:text-gray-400'>
           {project.shortDescription}
         </p>
