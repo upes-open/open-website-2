@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import getGithubOgImage from '@/app/projects/project_section/osoc_project/getOGimage';
+import { getGithubOgImage } from '@/lib/githubApi';
 import { ImGithub } from 'react-icons/im';
 import Link from 'next/link';
 import { UrlObject } from 'url';
@@ -24,7 +24,7 @@ export type ImageItem = {
 export type ProjectItem = {
   src: string;
   alt: string;
-  githubLink: UrlObject;
+  githubLink: UrlObject | string;
   projectName: string;
   shortDescription: string;
 };

@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils';
 import React from 'react';
 import Image from 'next/image';
-import getGithubOgImage from '@/app/projects/project_section/osoc_project/getOGimage';
+import { getGithubOgImage } from '@/lib/githubApi';
 
 export type CardItem = {
   src: string;
